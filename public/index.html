@@ -3,19 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pencarian Lokasi & Geocoding API</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <h3>Nama : Muhammad Rasyid Ridha Aqimuddin</h3>
-        <h3>NIM : 20240140151</h3>
-    </section>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
 
-    <section>
-        <p>Kota : </p> <span id="kota"></span>
-        <br>
-        <p>Koordinat : </p> <span id="koordinat"></span>
-    </section>
+    <div class="app-container">
+        <header class="profile-card">
+            <div class="profile-avatar">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <div class="profile-info">
+                <h2>Muhammad Rasyid Ridha Aqimuddin</h2>
+                <span class="nim-badge"><i class="fa-solid fa-id-card"></i> NIM: 20240140151</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="search-header">
+                <h1><i class="fa-solid fa-earth-asia"></i> Explorer Lokasi & Coordinates</h1>
+                <p>Cari informasi wilayah, koordinat latitude & longitude dengan MapTiler API</p>
+            </div>
+
+            <div class="search-box">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="kotaInput" placeholder="Masukkan nama kota (misal: Yogyakarta, Bandung)...">
+                </div>
+                <button id="btn">
+                    <span>Cari</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="results-container">
+                <div class="result-card primary">
+                    <div class="card-icon"><i class="fa-solid fa-city"></i></div>
+                    <div class="card-body">
+                        <span class="card-label">Kota / Lokasi</span>
+                        <h3 class="card-value" id="kota">-</h3>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-icon"><i class="fa-solid fa-flag"></i></div>
+                    <div class="card-body">
+                        <span class="card-label">Negara</span>
+                        <p class="card-value" id="negara">-</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="card-body">
+                        <span class="card-label">Provinsi</span>
+                        <p class="card-value" id="provinsi">-</p>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-icon"><i class="fa-solid fa-building-user"></i></div>
+                    <div class="card-body">
+                        <span class="card-label">Kecamatan / Kab.</span>
+                        <p class="card-value" id="kecamatan">-</p>
+                    </div>
+                </div>
+
+                <div class="result-card coordinate">
+                    <div class="card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+                    <div class="card-body">
+                        <span class="card-label">Longitude</span>
+                        <p class="card-value coord-text" id="longitude">-</p>
+                    </div>
+                </div>
+
+                <div class="result-card coordinate">
+                    <div class="card-icon"><i class="fa-solid fa-arrows-up-down"></i></div>
+                    <div class="card-body">
+                        <span class="card-label">Latitude</span>
+                        <p class="card-value coord-text" id="latitude">-</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
